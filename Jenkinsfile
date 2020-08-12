@@ -19,12 +19,16 @@ pipeline{
 				
 			 }
 			 }
-	    
+	    stage('comment'){
+		    steps{
+ triggers {
+        issueCommentTrigger('.*test this please.*')
 	       }
-		
+		    }
+	    }
 			
 
 	}
-    
+}
 		
 	
