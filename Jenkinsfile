@@ -13,9 +13,7 @@ pipeline{
 			}
 			stage('...run deploy..'){
 			 steps{
-			 cd C:\Users\prayagn\Documents\GitHub\desktop-tutorial
-             javac Hello.java
-             java Hello
+			debug.logger("its all completed")
 			 }
 			 }
 		}
