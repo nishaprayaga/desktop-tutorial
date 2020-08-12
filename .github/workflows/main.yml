@@ -1,5 +1,12 @@
+name: Pull Request Validation Workflow
+
+
 on:
-  push:
+  pull_request:
     branches:
-    - main
-    - release/*
+      - master
+      - development
+      - feature-*
+      - emergency-*
+      - release-*
+   
