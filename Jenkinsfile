@@ -1,4 +1,4 @@
-buildPlugin()
+
 
 pipeline{
    agent any
