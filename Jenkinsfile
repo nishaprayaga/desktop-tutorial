@@ -21,7 +21,8 @@ pipeline{
 	    
 	       }
 		
-			post package org.jenkinsci.plugins.pipeline.github;
+			post
+	package org.jenkinsci.plugins.pipeline.github;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import groovy.lang.GroovyObjectSupport;
