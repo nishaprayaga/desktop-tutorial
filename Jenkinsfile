@@ -13,10 +13,9 @@ node{
 			 }
 	    stage('comment'){
 		    
- triggers {
+
         issueCommentTrigger('.*test this please.*')
 	       
-		    }
-	    }
+		    	    }
 
 }
