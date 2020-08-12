@@ -13,7 +13,7 @@ pipeline{
 			}
 			stage('...run deploy..'){
 			 steps{
-			debug.logger("its all completed")
+			echo "done"
 			 }
 			 }
 		}
