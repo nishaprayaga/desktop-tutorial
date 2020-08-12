@@ -5,10 +5,18 @@ node{
 			    echo "hello"
 				}
 			}
-			stage('...test..'){
-		
-		def externalMethod = evaluate readFile("continuousBuildGW.groovy")
-			
-			}
+			stage('...run deploy..'){
+			 steps{
+			echo "done"
+				
+			 }
+			 }
+	    stage('comment'){
+		    steps{
+ triggers {
+        issueCommentTrigger('.*test this please.*')
+	       }
+		    }
+	    }
 
 }
