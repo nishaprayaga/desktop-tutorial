@@ -16,7 +16,7 @@ pipeline{
 			stage('...run deploy..'){
 			 steps{
 			echo "done"
-				 def comment = pullRequest.comment('This PR is highly illogical..')
+				
 			 }
 			 }
 	    
