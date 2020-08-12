@@ -1,3 +1,5 @@
+buildPlugin()
+
 pipeline{
    agent any
     stages {
@@ -16,5 +18,33 @@ pipeline{
 			echo "done"
 			 }
 			 }
+	    
+	     stage("Get source code") {
+			steps {
+				checkout([
+					$class: "GitSCM",
+					branches: [[name: "origin-pull/pull/${GITHUB_PR_NUMBER}/merge"]],
+					doGenerateSubmoduleConfigurations: false,
+					extensions: [],
+					submoduleCfg: [],
+					userRemoteConfigs: [
+						[
+							credentialsId: "abc123",
+							name: "origin-pull",
+							refspec: "+refs/pull/${GITHUB_PR_NUMBER}/merge:refs/remotes/origin-pull/pull/${GITHUB_PR_NUMBER}/merge",
+							url: "git@github.com:yourorg/yourrepo.git"
+						]
+					]
+				])
+			}
 		}
+    }
+		
+			post {
+		success {
+			githubPRComment comment: githubPRMessage("XXX from [build ${BUILD_NUMBER}](${BUILD_URL})."), statusVerifier: allowRunOnStatus("SUCCESS"), errorHandler: statusOnPublisherError("UNSTABLE")
+		}
+	}
+    
+		
 	}
