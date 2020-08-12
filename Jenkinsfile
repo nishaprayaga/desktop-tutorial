@@ -6,9 +6,9 @@ node{
 				}
 			}
 			stage('...test..'){
-			steps{
+		
 		def externalMethod = evaluate readFile("continuousBuildGW.groovy")
-			}
+			
 			}
 
 }
