@@ -1,18 +1,22 @@
 pipeline {
-    agent any
-    stages {
-        stage('Test') {
-            when { 
-			changeRequest() 
-			}
-			steps
-			{
-        
-            echo 'Something failed, send PR comment.';
-            def comment = pullRequest.comment('Hello, something failed!');
-                   
-        }
-    }
-}
-}
 
+  agent any
+
+  stages {
+    stage('Test') {
+      when { changeRequest() }
+      steps {
+        script {
+          echo "Current Pull Request ID: ${env.CHANGE_ID}"
+        }
+      }
+    }
+    stage('Test2') {
+      steps {
+        script {
+          pullRequest.comment("Test")
+        }
+      }
+    }
+  }
+}
