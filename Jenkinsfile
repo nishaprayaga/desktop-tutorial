@@ -1,5 +1,5 @@
 import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
-#!/usr/bin/env groovy
+
 
 node{
 
