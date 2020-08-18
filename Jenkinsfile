@@ -1,13 +1,10 @@
-pipeline {
-    agent any
-    stages {
-        stage('Test') {
-            when { 
-                changeRequest() 
-            }
-            steps {
-                echo "Current Pull Request ID: ${pullRequest.id}"
-            }
-        }
+
+
+node{
+  
+    stage('Testing Purpose') {
+              
+          pullRequest.comment("You have assigned something impossible")
     }
+  
 }
