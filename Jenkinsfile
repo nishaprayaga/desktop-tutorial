@@ -12,9 +12,11 @@ node{
 			 
 			 }
 	    stage('comment'){
+           def comment = pullRequest.comment('This PR is highly illogical..')
+           IssueComment comment(String body)
 		    
 
-        issueCommentTrigger('.*test this please.*')
+        
 	       
 		    	    }
 
