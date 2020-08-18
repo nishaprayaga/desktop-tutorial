@@ -4,7 +4,7 @@ node{
   
     stage('Testing Purpose') {
               
-          pullRequest.comment("You have assigned something impossible")
+          pullRequest.comment("This is the comment for PR ${env.CHANGE_ID}")
     }
   
 }
