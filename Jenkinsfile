@@ -15,8 +15,7 @@ node{
            def comment = pullRequest.comment('This PR is highly illogical..')
           
 		    comment.createReply('Khaaannnn!')
-	 logger.debug("this is for comment")
-        
+	 
 	       
 		    	    }
 
