@@ -4,7 +4,8 @@ node{
   
     stage('Testing Purpose') {
        jenkinsUrl="http://localhost:9090/"
-       pullRequest.comment("This PR is highly illogical..and jenkins url is ${jenkinsUrl}")
+       useMe="here"
+       pullRequest.comment("This PR is highly illogical and you can find your solutions <a href="${jenkinsUrl}"> ${useMe} </a>")
       
     }
 }
